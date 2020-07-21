@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel App</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="headline">
+      <!--<img id="logo" src="../assets/logo.png" alt="logo">-->
+      <h1 id="page-title">Travel Planner</h1>
+    </div>
+
+    <section id="add-trip-section">
+
+
+      <form id="add-trip-form">
+        <div class="trip-summary row">
+          <label for="city"> My trip to:</label>
+          <input type="text" id="name" required placeholder=" Enter Location">
+        </div>
+
+        <div class="trip-departing row">
+          <label for="date">Start Date:</label>
+          <input type="date" id="startDate" required placeholder=" yyyy/mm/dd">
+        </div>
+        <div class="trip-departing row">
+          <label for="date">End Date:</label>
+          <input type="date" id="endDate" required placeholder=" yyyy/mm/dd">
+        </div>
+
+        <div class="button-panel row">
+          <button type="submit" id="btn-add" onclick="return Client.formHandler(event)" onsubmit="return Client.formHandler(event)">Save Trip</button>
+        </div>
+        <div class="button-panel row">
+          <button type="submit" id="btn-add" onclick="return Client.deleteHandleSubmit(event)" onsubmit="return Client.deleteHandleSubmit(event)">Delete Trip</div>
+        </div>
+      </form>
+    </section>
+
+    <section id="list-trip-section">
+      <div class="trip-info">
+        <div>
+          Trip List:
+        </div>
+        <div>
+          <button id="btn-init">List Trip</button>
+        </div>
+        <div id="result-container">
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <footer>
+      <div class="box">
+        <div class="box-item author">
+          <i>Develop by Salama.</i>
+        </div>
+        <div class="box-item other">
+          &copy;2020
+        </div>
+        <div class="box-item other">
+          Udacity
+        </div>
+
+      </div>
+
+    </footer>
+  </div>
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>
+
+
+</body>
+
+</html>
